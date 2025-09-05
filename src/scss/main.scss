@@ -1,0 +1,45 @@
+@import 'header';
+@import '_general';
+@import 'trading-container/trader-container';
+@import 'trading-container/transaction-price';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+              /* ======= MODO CLARO ======= */
+:root {
+  --bg-body: rgb(255, 255, 255);
+
+  --title-h1: rgb(255, 115, 0);
+  --color-text: rgb(0, 0, 0);
+
+  /* clases donde se muestra e ingresa el dinero */
+  --bg-section-content: rgb(245, 252, 251);
+  --border-section-content: rgba(0, 0, 0, 0.4);
+
+  /* botones generales */
+  --button-border: rgb(0, 0, 0);
+  --button-border-hover: rgba(0, 0, 0, 0.5);
+  --button-bg-hover: rgba(0, 0, 0, 0.5);
+  --button-color-hover: rgba(0, 0, 0, 0.8);
+}
+
+              /* ======= MODO OSCURO ======= */
+body.dark-mode {
+  --bg-body:  rgb(24, 26, 32);
+
+  --title-h1: rgb(255, 187, 0);
+}
+
+.body {
+  background-color: var(--bg-body);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main {
+  padding: 0 25px;
+  width: 80%;
+  margin: auto;
+}

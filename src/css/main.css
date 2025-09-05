@@ -1,0 +1,163 @@
+@charset "UTF-8";
+.header {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header h1 {
+  color: var(--title-h1);
+  font-size: 3.2em;
+  font-weight: 900;
+}
+
+/* inputs */
+.input {
+  padding: 0 3px;
+}
+
+.section-content {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+  background-color: var(--bg-section-content);
+  padding: 10px;
+  gap: 10px;
+  border: 1px solid var(--border-section-content);
+  border-radius: 7px;
+}
+
+/* ======= contenedor general */
+.trading-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.trading-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ======= saldo actial e ingreso de dinero */
+.deposit-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-section-content);
+  border: 1px solid var(--border-section-content);
+  border-radius: 5px;
+  padding: 7px;
+}
+
+.deposit-button {
+  background-color: transparent;
+  margin-left: 5px;
+  padding: 0 6px;
+  border-radius: 4px;
+  font-weight: 400;
+  border: 1px solid var(--button-border);
+}
+
+.deposit-button:hover {
+  border: 1px solid var(--button-border-hover);
+  color: var(--button-color-hover);
+}
+
+/*  ===== clases del buscador, comisión y compra/ventar */
+.trader-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.trade-buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.buy-btn,
+.sell-btn {
+  font-weight: 500;
+  border: 1px solid var(--button-border);
+  border-radius: 3px;
+  padding: 0 5px;
+  color: white;
+}
+
+.buy-btn {
+  background-color: rgb(38, 207, 108);
+}
+
+.sell-btn {
+  background-color: rgb(245, 64, 64);
+}
+
+.buy-btn:hover {
+  background-color: rgb(32, 175, 92);
+}
+
+.sell-btn:hover {
+  background-color: rgb(209, 50, 50);
+}
+
+.buy-btn:hover,
+.sell-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--button-border-hover);
+}
+
+.transaction-price {
+  width: 100%;
+  height: auto;
+  background-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ======= MODO CLARO ======= */
+:root {
+  --bg-body: rgb(255, 255, 255);
+  --title-h1: rgb(255, 115, 0);
+  --color-text: rgb(0, 0, 0);
+  /* clases donde se muestra e ingresa el dinero */
+  --bg-section-content: rgb(245, 252, 251);
+  --border-section-content: rgba(0, 0, 0, 0.4);
+  /* botones generales */
+  --button-border: rgb(0, 0, 0);
+  --button-border-hover: rgba(0, 0, 0, 0.5);
+  --button-bg-hover: rgba(0, 0, 0, 0.5);
+  --button-color-hover: rgba(0, 0, 0, 0.8);
+}
+
+/* ======= MODO OSCURO ======= */
+body.dark-mode {
+  --bg-body: rgb(24, 26, 32);
+  --title-h1: rgb(255, 187, 0);
+}
+
+.body {
+  background-color: var(--bg-body);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main {
+  padding: 0 25px;
+  width: 80%;
+  margin: auto;
+}
+
+/*# sourceMappingURL=main.css.map */

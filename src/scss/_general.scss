@@ -1,0 +1,19 @@
+/* inputs */
+.input {
+  padding: 0 3px;
+}
+
+.section-content {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+  background-color: var(--bg-section-content);
+  padding: 10px;
+  gap: 10px;
+  border: 1px solid var(--border-section-content);
+  border-radius: 7px;
+}

@@ -1,0 +1,12 @@
+.header {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header h1 {
+  color: var(--title-h1);
+  font-size: 3.2em;
+  font-weight: 900;
+}
