@@ -71,6 +71,12 @@
   color: var(--button-color-hover);
 }
 
+/* ===== clase para mostrar el precio de la cripto */
+.price {
+  margin-left: 1px;
+  font-weight: 500;
+}
+
 /*  ===== clases del buscador, comisión y compra/ventar */
 .trader-container {
   display: grid;
@@ -117,12 +123,23 @@
   border: 1px solid var(--button-border-hover);
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 .transaction-price {
   width: 100%;
   height: auto;
-  background-color: black;
 }
 
+.buys-title,
+.sells-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* sass --watch src/scss/main.scss src/css/main.css  */
 * {
   margin: 0;
   padding: 0;
