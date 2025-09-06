@@ -35,7 +35,7 @@
           <!-- buscador de criptomoneda -->
           <section class="section-content">
             <!-- listado de criptomonedas -->
-            <select id="crypto-select"></select>
+            <select id="crypto-select" class="w-75"></select>
 
             <input type="text" id="search-cripto-input" class="input" placeholder="Cripto">
           </section>
@@ -64,18 +64,18 @@
       <section class="transaction-price">
         <div class="transaction-price">
           <div class="buys-list">
-            <div class="buys-title">
-              <p>Cant. USDT</p>
-              <p>Cant. <span id="buys-crypto"></span></p>
+            <div class="buys-titles">
+              <p class="ms-4"><span>Cant.</span> <span class="buys-type-money">(USDT)</span></p>
+              <p class="me-4"><span>Cant.</span> <span id="buys-crypto" class="buys-crypto"></span></p>
             </div>
 
             <ul id="buys-list"></ul>
           </div>
           
           <div class="sells-list">
-            <div class="sells-title">
-              <p>Cant. USDT</p>
-              <p>Cant. <span id="sells-crypto"></span></p>
+            <div class="sells-titles">
+              <p class="ms-4"><span>Cant.</span> <span class="sells-type-money">(USDT)</span></p>
+              <p class="me-4"><span>Cant.</span> <span id="sells-crypto" class="sells-crypto"></span></p>
             </div>
 
             <ul id="sells-list"></ul>

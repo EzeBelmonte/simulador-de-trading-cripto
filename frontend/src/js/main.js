@@ -1,5 +1,7 @@
 import { toDeposit } from "./functions/wallet.js";
-import { refreshCryptoCache, getCryptoCache, getCryptoPrice, subscribeCrypto } from "./functions/market.js";
+import { refreshCryptoCache, getCryptoCache, getCryptoPrice, subscribeCrypto,
+          onTrade, getLastTrades, getCryptoTickerFromSymbol
+ } from "./functions/market.js";
 
 // Depositar dinero
 toDeposit()
@@ -45,7 +47,6 @@ async function init() {
     subscribeCrypto((cryptos[0].symbol + "usdt").toLowerCase())
   }
 
-
   // Cambiar precio cuando se selecciona otra cripto
   select.addEventListener("change", () => {
     // Obtenemos la criptomoneda
@@ -76,6 +77,39 @@ function updatePrice(price) {
   document.getElementById("show-current-price").textContent = `$${formatted}`
 }
 
+// Escuchar trades
+const buysList = document.getElementById("buys-list")
+const sellsList = document.getElementById("sells-list")
+onTrade((trade) => {
+  const price = parseFloat(trade.p).toFixed(2)
+  const amount = parseFloat(trade.q).toFixed(8)
+
+  const { lastBuys, lastSells, maxItems} = getLastTrades()
+
+  if (trade.m) {
+    // venta
+    lastSells.unshift({ price, amount })
+    if (lastSells.length > maxItems) lastSells.pop()
+  } else {
+    // compra
+    lastBuys.unshift({ price, amount })
+    if (lastBuys.length > maxItems) lastBuys.pop()
+  }
+
+  if (buysList) {
+    document.getElementById("buys-crypto").textContent = "(Cripto)"
+    buysList.innerHTML = lastBuys
+      .map(t => `<li><span class="buys">${t.amount}</span> <span>$${t.price}</span></li>`)
+      .join("")
+  }
+
+  if (sellsList) {
+    document.getElementById("sells-crypto").textContent = "(Cripto)"
+    sellsList.innerHTML = lastSells
+      .map(t => `<li><span class="sells">${t.amount}</span> <span>$${t.price}</span></li>`)
+      .join("")
+  }
+})
 
 document.addEventListener("DOMContentLoaded", () => {
   init()

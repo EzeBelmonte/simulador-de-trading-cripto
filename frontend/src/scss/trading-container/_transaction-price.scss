@@ -1,16 +1,61 @@
-ul {
+#buys-list,
+#sells-list {
   list-style: none;
   padding: 0;
+}
+
+#buys-list li,
+#sells-list li {
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
+  font-weight: 400;
+  font-size: .8em;
+  margin: 0 10px;
 }
 
 .transaction-price {
   width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
+.buys-list,
+.sells-list {
+  background-color: rgb(39, 39, 39);
+  border: 1px solid var(--border-section-content);
+  border-radius: 7px;
+  padding: 5px;
+}
 
-.buys-title,
-.sells-title {
+.buys-titles,
+.sells-titles {
   display: flex;
+  color: aliceblue;
   justify-content: space-between;
+}
+
+.buys-type-money,
+.sells-type-money,
+.buys-crypto,
+.sells-crypto {
+  font-size: .77em;
+  font-weight: 500;
+}
+
+.buys-titles p,
+.sells-titles p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: .8em;
+}
+
+.buys {
+  color: rgb(5, 216, 5);
+}
+.sells {
+  color: rgb(216, 5, 5);
 }

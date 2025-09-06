@@ -30,13 +30,14 @@
   gap: 10px;
   border: 1px solid var(--border-section-content);
   border-radius: 7px;
+  box-sizing: border-box;
 }
 
 /* ======= contenedor general */
 .trading-container {
   width: 100%;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: 20px;
 }
 
@@ -123,20 +124,67 @@
   border: 1px solid var(--button-border-hover);
 }
 
-ul {
+#buys-list,
+#sells-list {
   list-style: none;
   padding: 0;
+}
+
+#buys-list li,
+#sells-list li {
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
+  font-weight: 400;
+  font-size: 0.8em;
+  margin: 0 10px;
 }
 
 .transaction-price {
   width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.buys-title,
-.sells-title {
+.buys-list,
+.sells-list {
+  background-color: rgb(39, 39, 39);
+  border: 1px solid var(--border-section-content);
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.buys-titles,
+.sells-titles {
   display: flex;
+  color: aliceblue;
   justify-content: space-between;
+}
+
+.buys-type-money,
+.sells-type-money,
+.buys-crypto,
+.sells-crypto {
+  font-size: 0.77em;
+  font-weight: 500;
+}
+
+.buys-titles p,
+.sells-titles p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8em;
+}
+
+.buys {
+  color: rgb(5, 216, 5);
+}
+
+.sells {
+  color: rgb(216, 5, 5);
 }
 
 /* sass --watch src/scss/main.scss src/css/main.css  */
