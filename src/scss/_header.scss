@@ -1,12 +1,116 @@
+
 .header {
-  height: 40vh;
+  width: 60%;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: auto;
+  box-sizing: border-box;
 }
 
-.header h1 {
+.header--title {
   color: var(--title-h1);
   font-size: 3.2em;
-  font-weight: 900;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+
+/* ======= DEPOSITO ======= */
+.deposit {
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  margin: 10px 40px;
+  background-color: var(--bg-containers);
+  border: 1px solid var(--border-containers);
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.deposit__amount-button {
+  padding: 0 6px;
+  border: 1px solid var(--button-border);
+  border-radius: 3px;
+}
+.deposit__amount-button:hover {
+  background-color: var(--button-bg-hover);
+  color: var(--button-color-hover);
+  border: 1px solid var(--button-border-hover);
+  border-radius: 3px;
+}
+
+
+/* ======= TRADING ======= */
+.trading {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.trading__section-container {
+  width: 100%;
+  background-color: var(--bg-containers);
+  border: 1px solid var(--border-containers);
+  border-radius: 7px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: auto;
+}
+
+/* ======= SELECCIÓN */
+/* selección de criptomoneda */
+.trading__select,
+.trading__search--input {
+  width: 60%;
+}
+
+/* ======= PREVIEW/COMISIÓN */
+/* preview del precio */
+.trading__preview-price,
+.trading__preview-commission--input {
+  width: 60%;
+}
+/* precio y selección de comisión */
+.trading__preview-price {
+  background-color: rgb(230, 230, 230);
+  border-radius: 7px;
+  padding: 2px 4px;
+}
+
+/* ======= TRADE */
+/* botones de compra/venta */
+.trading__trade-buttons {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trading__button--buy,
+.trading__button--sell {
+  padding: 0 6px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: white;
+}
+.trading__button--buy {
+  background-color: rgb(27, 180, 103);
+}
+.trading__button--sell {
+  background-color: rgb(235, 21, 21);
+}
+.trading__button--buy:hover {
+  background-color: rgb(17, 153, 85);
+}
+.trading__button--sell:hover {
+  background-color: rgb(204, 16, 16);
 }

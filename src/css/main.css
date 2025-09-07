@@ -1,15 +1,122 @@
 @charset "UTF-8";
 .header {
-  height: 40vh;
+  width: 60%;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: auto;
+  box-sizing: border-box;
 }
 
-.header h1 {
+.header--title {
   color: var(--title-h1);
   font-size: 3.2em;
-  font-weight: 900;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+/* ======= DEPOSITO ======= */
+.deposit {
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  margin: 10px 40px;
+  background-color: var(--bg-containers);
+  border: 1px solid var(--border-containers);
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.deposit__amount-button {
+  padding: 0 6px;
+  border: 1px solid var(--button-border);
+  border-radius: 3px;
+}
+
+.deposit__amount-button:hover {
+  background-color: var(--button-bg-hover);
+  color: var(--button-color-hover);
+  border: 1px solid var(--button-border-hover);
+  border-radius: 3px;
+}
+
+/* ======= TRADING ======= */
+.trading {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.trading__section-container {
+  width: 100%;
+  background-color: var(--bg-containers);
+  border: 1px solid var(--border-containers);
+  border-radius: 7px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: auto;
+}
+
+/* ======= SELECCIÓN */
+/* selección de criptomoneda */
+.trading__select,
+.trading__search--input {
+  width: 60%;
+}
+
+/* ======= PREVIEW/COMISIÓN */
+/* preview del precio */
+.trading__preview-price,
+.trading__preview-commission--input {
+  width: 60%;
+}
+
+/* precio y selección de comisión */
+.trading__preview-price {
+  background-color: rgb(230, 230, 230);
+  border-radius: 7px;
+  padding: 2px 4px;
+}
+
+/* ======= TRADE */
+/* botones de compra/venta */
+.trading__trade-buttons {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trading__button--buy,
+.trading__button--sell {
+  padding: 0 6px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: white;
+}
+
+.trading__button--buy {
+  background-color: rgb(27, 180, 103);
+}
+
+.trading__button--sell {
+  background-color: rgb(235, 21, 21);
+}
+
+.trading__button--buy:hover {
+  background-color: rgb(17, 153, 85);
+}
+
+.trading__button--sell:hover {
+  background-color: rgb(204, 16, 16);
 }
 
 /* inputs */
@@ -33,160 +140,6 @@
   box-sizing: border-box;
 }
 
-/* ======= contenedor general */
-.trading-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 20px;
-}
-
-.trading-content {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* ======= saldo actial e ingreso de dinero */
-.deposit-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--bg-section-content);
-  border: 1px solid var(--border-section-content);
-  border-radius: 5px;
-  padding: 7px;
-}
-
-.deposit-button {
-  background-color: transparent;
-  margin-left: 5px;
-  padding: 0 6px;
-  border-radius: 4px;
-  font-weight: 400;
-  border: 1px solid var(--button-border);
-}
-
-.deposit-button:hover {
-  border: 1px solid var(--button-border-hover);
-  color: var(--button-color-hover);
-}
-
-/* ===== clase para mostrar el precio de la cripto */
-.price {
-  margin-left: 1px;
-  font-weight: 500;
-}
-
-/*  ===== clases del buscador, comisión y compra/ventar */
-.trader-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-}
-
-.trade-buttons {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5px;
-}
-
-.buy-btn,
-.sell-btn {
-  font-weight: 500;
-  border: 1px solid var(--button-border);
-  border-radius: 3px;
-  padding: 0 5px;
-  color: white;
-}
-
-.buy-btn {
-  background-color: rgb(38, 207, 108);
-}
-
-.sell-btn {
-  background-color: rgb(245, 64, 64);
-}
-
-.buy-btn:hover {
-  background-color: rgb(32, 175, 92);
-}
-
-.sell-btn:hover {
-  background-color: rgb(209, 50, 50);
-}
-
-.buy-btn:hover,
-.sell-btn:hover {
-  color: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--button-border-hover);
-}
-
-#buys-list,
-#sells-list {
-  list-style: none;
-  padding: 0;
-}
-
-#buys-list li,
-#sells-list li {
-  display: flex;
-  justify-content: space-between;
-  color: aliceblue;
-  font-weight: 400;
-  font-size: 0.8em;
-  margin: 0 10px;
-}
-
-.transaction-price {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.buys-list,
-.sells-list {
-  background-color: rgb(39, 39, 39);
-  border: 1px solid var(--border-section-content);
-  border-radius: 7px;
-  padding: 5px;
-}
-
-.buys-titles,
-.sells-titles {
-  display: flex;
-  color: aliceblue;
-  justify-content: space-between;
-}
-
-.buys-type-money,
-.sells-type-money,
-.buys-crypto,
-.sells-crypto {
-  font-size: 0.77em;
-  font-weight: 500;
-}
-
-.buys-titles p,
-.sells-titles p {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.8em;
-}
-
-.buys {
-  color: rgb(5, 216, 5);
-}
-
-.sells {
-  color: rgb(216, 5, 5);
-}
-
 /* sass --watch src/scss/main.scss src/css/main.css  */
 * {
   margin: 0;
@@ -199,12 +152,12 @@
   --title-h1: rgb(255, 115, 0);
   --color-text: rgb(0, 0, 0);
   /* clases donde se muestra e ingresa el dinero */
-  --bg-section-content: rgb(245, 252, 251);
-  --border-section-content: rgba(0, 0, 0, 0.4);
+  --bg-containers: rgb(245, 252, 251);
+  --border-containers: rgba(0, 0, 0, 0.4);
   /* botones generales */
   --button-border: rgb(0, 0, 0);
   --button-border-hover: rgba(0, 0, 0, 0.5);
-  --button-bg-hover: rgba(0, 0, 0, 0.5);
+  --button-bg-hover: rgb(223, 223, 223);
   --button-color-hover: rgba(0, 0, 0, 0.8);
 }
 
@@ -221,8 +174,12 @@ body.dark-mode {
 
 .main {
   padding: 0 25px;
-  width: 80%;
+  width: 70%;
   margin: auto;
+}
+
+.color-text {
+  color: var(--color-text);
 }
 
 /*# sourceMappingURL=main.css.map */

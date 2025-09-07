@@ -33,7 +33,7 @@ export function listTop50Cryptos() {
     {
       symbol: 'BTC',
       fullName: 'Bitcoin',
-      price: '45000.00',
+      price: '120000.00',
       change24h: '2.5'
     },
     {

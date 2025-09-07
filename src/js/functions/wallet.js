@@ -29,7 +29,7 @@ export function desposit() {
   availableAmount += money;
 
   // Renderizamos el nuevo monto
-  document.getElementById("money").textContent = updateFormatPrice(availableAmount);
+  document.getElementById("amount-deposited").textContent = updateFormatPrice(availableAmount);
 }
 
 

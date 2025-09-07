@@ -12,77 +12,52 @@
 <body class="body">
   
   <header class="header">
-    <h1>Simulador de Trading Cripto</h1>
-  </header>
+    <h1 class="header--title">Simulador de Trading Cripto</h1>
+    
+    <!-- contenedor general donde se ingresa dinero -->
+    <section class="deposit">
+      <p class="color-text mb-0"><span>Dinero disponible:</span> <span id="amount-deposited" class="fw-bold">0</span></p>
 
-  <main class="main d-flex flex-column">
+      <!-- input y boton donde se ingresa el dinero -->
+      <div class="deposit__amount">
+        <input type="number" min="0" id="deposit-amount-input" class="deposit__amount--input" placeholder="Ingrese monto">
+        <button id="deposit-amount-button" class="deposit__amount--button">Ingresar</button>
+      </div>
+    </section>
+
     <!-- contenedor del trading -->
-    <section class="trading-container">
-      <section class="trading-content">
-        <!-- contenedor general donde se ingresa dinero -->
-        <section class="deposit-container">
-          <p class="mb-0"><span>Dinero disponible:</span> <span id="money" class="fw-bold">0</span></p>
+    <section class="trading">
+      <!-- buscador de criptomoneda -->
+      <section class="trading__section-container">
+        <!-- listado de criptomonedas -->
+        <select id="crypto-selected" class="trading__select"></select>
 
-          <!-- input y boton donde se ingresa el dinero -->
-          <div class="deposit-amount">
-            <input type="number" min="0" id="deposit-amount-input" class="input" placeholder="Ingrese monto">
-            <button id="deposit-button" class="deposit-button">Ingresar</button>
-          </div>
-        </section>
-
-        <!-- contenedor de compra de criptomonedas -->
-        <section class="trader-container">
-          <!-- buscador de criptomoneda -->
-          <section class="section-content">
-            <!-- listado de criptomonedas -->
-            <select id="crypto-select" class="w-75"></select>
-
-            <input type="text" id="search-cripto-input" class="input" placeholder="Cripto">
-          </section>
-
-          <!-- visor de precio y selección de comisión -->
-          <section class="section-content">
-            <span id="show-current-price" class="price me-auto">0</span>
-            
-            <input type="number" id="choose-commission" class="input" value="0.5" min="0" step="0.1" placeholder="Comisión (por defecto 0.5)">
-          </section>
-
-          <!-- compra/venta de criptomoneda -->
-          <section class="section-content">
-            <input type="number" id="trade-price-cripto" class="input" placeholder="Precio(USDT)">
-            <input type="number" id="trade-amount-cripto" class="input" placeholder="Cantidad(CRIPTO)">
-            <input type="number" id="trade-amount-usdt" class="input mt-3" placeholder="Total(USDT)">
-            <div class="trade-buttons">
-              <button id="buy-btn" class="buy-btn">Comprar</button>
-              <button id="sell-btn" class="sell-btn">Vender</button>
-            </div>
-          </section>
-        </section>
+        <input type="text" id="crypto-search" class="trading__search--input" placeholder="Cripto">
       </section>
 
-      <!-- precios de compra y venta en tiempo real -->
-      <section class="transaction-price">
-        <div class="transaction-price">
-          <div class="buys-list">
-            <div class="buys-titles">
-              <p class="ms-4"><span>Cant.</span> <span class="buys-type-money">(USDT)</span></p>
-              <p class="me-4"><span>Cant.</span> <span id="buys-crypto" class="buys-crypto"></span></p>
-            </div>
+      <!-- visor de precio y selección de comisión -->
+      <section class="trading__section-container">
+        <span id="preview-selected-price" class="trading__preview-price fw-bold">0</span>
+        
+        <input type="number" id="preview-commission" class="trading__preview-commission--input" value="0.5" min="0" step="0.1" placeholder="Comisión (por defecto 0.5)">
+      </section>
 
-            <ul id="buys-list"></ul>
-          </div>
-          
-          <div class="sells-list">
-            <div class="sells-titles">
-              <p class="ms-4"><span>Cant.</span> <span class="sells-type-money">(USDT)</span></p>
-              <p class="me-4"><span>Cant.</span> <span id="sells-crypto" class="sells-crypto"></span></p>
-            </div>
-
-            <ul id="sells-list"></ul>
-          </div>
+      <!-- compra/venta de criptomoneda -->
+      <section class="trading__section-container">
+        <input type="number" id="trading-crypto-price" class="trading__crypto-price--input" placeholder="Precio(USDT)">
+        <input type="number" id="trading-crypto-amount" class="trading__crypto-amount--input" placeholder="Cantidad(CRIPTO)">
+        <input type="number" id="trading-usdt-total" class="trading__crypto-usdt--input mt-3" placeholder="Total(USDT)">
+        
+        <div class="trading__trade-buttons">
+          <button id="buy-button" class="trading__button--buy">Comprar</button>
+          <button id="sell-button" class="trading__button--sell">Vender</button>
         </div>
       </section>
     </section>
+  </header>
+
+  <main class="main d-flex flex-column">
+    
   </main>
 
   <!-- Bootstap -->
